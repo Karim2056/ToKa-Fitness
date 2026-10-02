@@ -1,0 +1,59 @@
+.header {
+    background-color: black;
+    font-family: JetBrains;
+    padding: 20px;
+    padding-left: 20px;
+    border-bottom: 5px solid var(--green);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > button > h1 {
+    color: white;
+    font-weight: 400;
+    font-family: JetBrains;
+}
+
+.title {
+    background-color: rgba(255, 0, 0, 0);
+    border: 0px solid;
+}
+
+.header-container {
+    border: 0px solid white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sign-up {
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+    margin-left: 20px;
+
+    color: var(--green);
+    border: 3px solid var(--green);
+    background-color: rgba(255, 0, 0, 0);
+    font-weight: bold;
+}
+
+.log-in {
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+
+    color: var(--green);
+    border: 3px solid var(--green);
+    background-color: rgba(255, 0, 0, 0);
+    font-weight: bold;
+}
+
+.settings {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    display: flex;
+
+    > img {
+        filter: invert(40%) sepia(53%) saturate(3795%) hue-rotate(93deg) brightness(114%) contrast(99%);    }
+}
