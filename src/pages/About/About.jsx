@@ -25,19 +25,19 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="subscription">
-                    <div className="tier-1">
+                    <div className="tiers">
                         <h3>Tier 1</h3>
                         <p>
                             • weekly dashboard <br />
                             • weekly workouts
                         </p>
-                        <div className="btn-1-container">
-                            <NavLink className="tier-1-btn" to="http://google.com/">
-                                hi
+                        <div className="btn-container">
+                            <NavLink className="tier-btn-link" to="/">
+                                <button className="tier-btn">free</button>
                             </NavLink>
                         </div>
                     </div>
-                    <div className="tier-2">
+                    <div className="tiers">
                         <h3>Tier 2</h3>
                         <p>
                             • weekly dashboard <br />
@@ -45,8 +45,13 @@ export default function Home() {
                             • calorie tracker <br />
                             • progress tracker
                         </p>
+                        <div className="btn-container">
+                            <NavLink className="tier-btn-link" to="/">
+                                <button className="tier-btn">£5 / month</button>
+                            </NavLink>
+                        </div>
                     </div>
-                    <div className="tier-3">
+                    <div className="tiers">
                         <h3>Tier 3</h3>
                         <p>
                             • weekly dashboard <br />
@@ -56,7 +61,13 @@ export default function Home() {
                             • meal recommendations <br />
                             • all available workouts
                         </p>
+                        <div className="btn-container">
+                            <NavLink className="tier-btn-link" to="/">
+                                <button className="tier-btn">£10 / month</button>
+                            </NavLink>
+                        </div>
                     </div>
+
                 </div>
             </main>
         </>
