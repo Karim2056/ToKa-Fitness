@@ -10,6 +10,12 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
     > a {
         text-decoration: none;
