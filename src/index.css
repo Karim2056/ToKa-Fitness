@@ -44,6 +44,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+
+}
+
+/* removing side scroll bar  */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 button {

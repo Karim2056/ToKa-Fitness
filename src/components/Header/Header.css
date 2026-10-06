@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 
-.header > button > h1 {
+.title > h1 {
     color: white;
     font-weight: 400;
     font-family: JetBrains;
@@ -49,11 +49,13 @@
     font-weight: bold;
 }
 
-.settings {
+.menu {
     background-color: rgba(255, 0, 0, 0);
     border: none;
     display: flex;
 
     > img {
-        filter: invert(40%) sepia(53%) saturate(3795%) hue-rotate(93deg) brightness(114%) contrast(99%);    }
+        width: 100%;
+        max-width: 50px;
+        filter: invert(55%) sepia(53%) saturate(3795%) hue-rotate(93deg) brightness(114%) contrast(99%);    }
 }

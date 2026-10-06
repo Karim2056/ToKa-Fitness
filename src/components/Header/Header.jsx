@@ -1,24 +1,31 @@
 import "./Header.css"
-import Settings from "../../assets/settings.svg"
+import { NavLink } from "react-router"
+import Menu from "../../assets/burger-menu-svgrepo-com (1).svg"
 
 export default function Header() {
     return (
         <div className="header">
-            <button className="title">
-                <h1 style={{ lineHeight: 1 }}>ToKa Fitness</h1>
-            </button>
+            <NavLink to="/">
+                <button className="title">
+                    <h1 style={{ lineHeight: 1 }}>ToKa Fitness</h1>
+                </button>
+            </NavLink>
 
             {/* buttons so header items are clickable */}
-            
-            <div className="header-container">      
-                <button className="sign-up">
-                    Sign Up
-                </button>
-                <button className="log-in">
-                    Log In
-                </button>
-                <button className="settings">
-                    <img className="settings-icon" src={Settings}></img>
+
+            <div className="header-container">
+                <NavLink to="/signup" className="signup">
+                    <button className="sign-up">
+                        Sign Up
+                    </button>
+                </NavLink>
+                <NavLink to="login" className="login">
+                    <button className="log-in">
+                        Log In
+                    </button>
+                </NavLink>
+                <button className="menu">
+                    <img className="menu-icon" src={Menu}></img>
                 </button>
             </div>
         </div>

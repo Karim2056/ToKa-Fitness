@@ -24,6 +24,7 @@ export default function Home() {
                         <p>Our mission is to inspire people to become stronger, healthier, and more confident through fitness. We believe that every journey is different, which is why we aim to provide a supportive environment where everyone can set goals, push their limits, and make lasting progress. Whether you’re just starting out or looking to take your training to the next level, we’re here to help you stay motivated and reach your full potential.</p>
                     </div>
                 </div>
+                {/* this section is for subscription tiers */}
                 <div className="subscription">
                     <div className="tiers">
                         <h3>Tier 1</h3>
