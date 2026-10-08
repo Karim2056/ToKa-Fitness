@@ -72,6 +72,13 @@
     padding: 100px;
 }
 
+.subscription-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
 .tiers {
     display: flex;
     flex-direction: column;

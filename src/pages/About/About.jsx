@@ -25,6 +25,10 @@ export default function Home() {
                     </div>
                 </div>
                 {/* this section is for subscription tiers */}
+                <div className="subscription-label">
+                    <h1>Memberships</h1>
+                    <p>choose your plan</p>
+                </div>
                 <div className="subscription">
                     <div className="tiers">
                         <h3>Tier 1</h3>

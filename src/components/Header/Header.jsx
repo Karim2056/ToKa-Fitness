@@ -21,7 +21,7 @@ export default function Header() {
                 </NavLink>
                 <NavLink to="login" className="login">
                     <button className="log-in">
-                        Log In
+                        Login
                     </button>
                 </NavLink>
                 <button className="menu">

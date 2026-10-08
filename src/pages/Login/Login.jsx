@@ -1,11 +1,15 @@
 import "./Login.css"
 import { NavLink } from "react-router"
+import BackArrow from "../../assets/back-svgrepo-com.svg"
 
 export default function Login() {
     return (
         <div className="login-body">
             <form>
-                <h1 className="login-title">
+                <h1 className="sign-up-title">
+                    <NavLink className="back-arrow-login" to="/">
+                        <img className="back-arrow-login" src={BackArrow} />
+                    </NavLink>
                     Login
                 </h1>
                 <div className="input-container">
