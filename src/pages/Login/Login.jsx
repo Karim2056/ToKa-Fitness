@@ -17,7 +17,7 @@ export default function Login() {
                     <input className="form-inputs" type="password" placeholder="password" />
                 </div>
                 <button className="login-btn">Login</button>
-                <NavLink className="page-switch" to="/signup">Already have an account? Login</NavLink>
+                <NavLink className="page-switch" to="/signup">Don't have an account? Sign Up</NavLink>
 
             </form>
         </div>
