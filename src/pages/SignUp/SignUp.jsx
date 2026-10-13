@@ -1,8 +1,21 @@
-import { NavLink } from "react-router"
 import "./SignUp.css"
+import { NavLink } from "react-router"
+import { useState } from "react";
+
 import BackArrow from "../../assets/back-svgrepo-com.svg"
 
 export default function SignUp() {
+
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        setErrorMsg("");
+    }
+
     return (
         <div className="sign-up-body">
             <form>
@@ -13,7 +26,8 @@ export default function SignUp() {
                     Sign Up
                 </h1>
                 <div className="input-container">
-                    <input className="form-inputs" type="email" placeholder="email" />
+                    <input className="form-inputs" type="email" placeholder="email"
+                    value={email}  />
                     <input className="form-inputs" placeholder="username" />
                     <input className="form-inputs" type="password" placeholder="password" />
                 </div>
@@ -21,5 +35,6 @@ export default function SignUp() {
                 <NavLink className="page-switch" to="/login">Already have an account? Login</NavLink>
             </form>
         </div>
+        
     )
 }
