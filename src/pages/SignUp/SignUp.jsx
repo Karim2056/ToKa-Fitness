@@ -14,6 +14,7 @@ export default function SignUp() {
         e.preventDefault();
 
         setErrorMsg("");
+
     }
 
     return (
@@ -26,10 +27,15 @@ export default function SignUp() {
                     Sign Up
                 </h1>
                 <div className="input-container">
-                    <input className="form-inputs" type="email" placeholder="email"
-                    value={email}  />
-                    <input className="form-inputs" placeholder="username" />
-                    <input className="form-inputs" type="password" placeholder="password" />
+                    <input className="form-inputs" type="email" placeholder="email" required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
+                    <input className="form-inputs" placeholder="username" required
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}/>
+                    <input className="form-inputs" type="password" placeholder="password" required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <button className="register-btn">Register</button>
                 <NavLink className="page-switch" to="/login">Already have an account? Login</NavLink>
