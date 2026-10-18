@@ -10,7 +10,7 @@ export default function Home() {
             <div className="home-body">
                 hi
             </div>
-            <LoggedFooter/>
+            <LoggedFooter />
         </>
     )
 }

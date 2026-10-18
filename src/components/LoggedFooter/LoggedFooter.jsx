@@ -10,16 +10,16 @@ export default function LoggedFooter() {
                     <button className="home-btn">home</button>
                 </NavLink>
                 <NavLink to="/home">
-                    <button className="home-btn">meals</button>
+                    <button className="meals-btn">meals</button>
+                </NavLink>
+                <NavLink to="/workouts">
+                    <button className="workouts-btn">workouts</button>
                 </NavLink>
                 <NavLink to="/home">
-                    <button className="home-btn">workouts</button>
+                    <button className="socials-btn">socials</button>
                 </NavLink>
                 <NavLink to="/home">
-                    <button className="home-btn">socials</button>
-                </NavLink>
-                <NavLink to="/home">
-                    <button className="home-btn">settings</button>
+                    <button className="settings-btn">settings</button>
                 </NavLink>
             </div>
         </div>
