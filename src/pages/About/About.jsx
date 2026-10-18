@@ -2,10 +2,13 @@ import "./About.css"
 import Gym1 from "../../assets/gym-photo-1.jpg"
 import Gym2 from "../../assets/gym-photo-2.jpg"
 import { NavLink } from "react-router"
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
 
 export default function Home() {
     return (
         <>
+            <Header />
             <main className="main-content">
 
                 {/* text first and then image 2nd, vice versa for "our mission" section */}
@@ -75,6 +78,7 @@ export default function Home() {
 
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

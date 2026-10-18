@@ -19,7 +19,7 @@ export default function Header() {
                         Sign Up
                     </button>
                 </NavLink>
-                <NavLink to="login" className="login">
+                <NavLink to="/login" className="login">
                     <button className="log-in">
                         Login
                     </button>

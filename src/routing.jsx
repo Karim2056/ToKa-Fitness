@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router";
 import About from "./pages/About/About"
 import SignUp from "./pages/SignUp/SignUp"
 import Login from "./pages/Login/Login";
+import Home from "./pages/Home/Home"
 
 export default function Pages() {
     return (
@@ -9,6 +10,7 @@ export default function Pages() {
             <Route index element={<About/>}/>
             <Route path="signup" element={<SignUp/>}/>
             <Route path="login" element={<Login/>}/>
+            <Route path="home" element={<Home/>}/>
         </Routes>
     )
 }
