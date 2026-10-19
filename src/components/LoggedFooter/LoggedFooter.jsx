@@ -9,7 +9,7 @@ export default function LoggedFooter() {
                 <NavLink to="/home">
                     <button className="home-btn">home</button>
                 </NavLink>
-                <NavLink to="/home">
+                <NavLink to="/meals">
                     <button className="meals-btn">meals</button>
                 </NavLink>
                 <NavLink to="/workouts">

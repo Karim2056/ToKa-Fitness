@@ -1,3 +1,216 @@
+/* Workouts.css */
+
 .workouts-body {
-    flex: 1;
+    min-height: 80vh;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.workouts-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.workouts-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.workouts-header h1 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.workouts-header p {
+    color: #666;
+}
+
+/* Card Styling */
+.workout-config-card,
+.workout-plan-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    -webkit-box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+.config-section {
+    margin-bottom: 25px;
+}
+
+.config-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+/* Days Button Selector */
+.days-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.day-btn {
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.day-btn:hover {
+    border-color: var(--blue);
+}
+
+.day-btn.active {
+    background-color: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+}
+
+/* Goals Button Selector */
+.goals-selector {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.goal-btn {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-bottom: 100px;
+}
+
+.goal-btn:hover {
+    border-color: var(--blue);
+}
+
+.goal-btn.active {
+    background-color: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+}
+
+/* Action Buttons */
+.cta-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: var(--green);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* Plan Display Styling */
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.scheduled-days-badge {
+    background-color: #e9ecef;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.plan-description {
+    color: #555;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.workout-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .workout-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.exercise-list-container h3,
+.video-container h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.exercise-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.exercise-list li {
+    background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Responsive YouTube Video Wrapper */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    border-radius: 20px;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
 }

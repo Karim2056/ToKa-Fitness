@@ -3,6 +3,7 @@ import About from "./pages/About/About"
 import SignUp from "./pages/SignUp/SignUp"
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home"
+import Meals from "./pages/Meals/Meals"
 import Workouts from "./pages/Workouts/Workouts"
 
 export default function Pages() {
@@ -12,7 +13,7 @@ export default function Pages() {
             <Route path="signup" element={<SignUp/>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="home" element={<Home/>}/>
-            <Route path="meals" element={<Home/>}/>
+            <Route path="meals" element={<Meals/>}/>
             <Route path="workouts" element={<Workouts/>}/>
             <Route path="socials" element={<Home/>}/>
             <Route path="settings" element={<Home/>}/>
