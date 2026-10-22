@@ -1,3 +1,7 @@
+* {
+  font-family: JetBrains;
+}
+
 :root {
   --text: #000000;
   --text-h: #08060d;
@@ -38,6 +42,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
 }
 
 body {

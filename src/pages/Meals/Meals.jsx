@@ -3,7 +3,6 @@ import "./Meals.css";
 import LoggedHeader from "../../components/LoggedHeader/LogedHeader";
 import LoggedFooter from "../../components/LoggedFooter/LoggedFooter";
 
-// Sample recommended meals data
 const RECOMMENDED_MEALS = [
   {
     id: 1,
@@ -50,21 +49,18 @@ const RECOMMENDED_MEALS = [
 ];
 
 export default function Meals() {
-  // State for active expanded card modal/details
   const [selectedMeal, setSelectedMeal] = useState(null);
 
-  // State for Calorie Tracker
-  const [loggedMeals, setLoggedMeals] = useState([
-    { id: 1, name: "Oatmeal with Milk", calories: 250 },
-    { id: 2, name: "Protein Shake", calories: 180 }
-  ]);
+  // Initialized to an empty array so no default logged meals show up without input
+  const [loggedMeals, setLoggedMeals] = useState([]);
   const [foodName, setFoodName] = useState("");
   const [caloriesInput, setCaloriesInput] = useState("");
 
-  // Handle adding new meal to the tracker
   const handleAddMeal = (e) => {
     e.preventDefault();
-    if (!foodName.trim() || !caloriesInput) return;
+    
+    // Strict validation: returns early if inputs are empty or only contain spaces
+    if (!foodName.trim() || !caloriesInput.toString().trim()) return;
 
     const newMeal = {
       id: Date.now(),
@@ -77,7 +73,11 @@ export default function Meals() {
     setCaloriesInput("");
   };
 
-  // Calculate total calories
+  // Function to delete a specific logged meal item
+  const handleDeleteMeal = (id) => {
+    setLoggedMeals(loggedMeals.filter((meal) => meal.id !== id));
+  };
+
   const totalCalories = loggedMeals.reduce((sum, item) => sum + item.calories, 0);
 
   return (
@@ -85,7 +85,6 @@ export default function Meals() {
       <LoggedHeader />
 
       <div className="meals-body">
-        {/* SECTION 1: Recommended Meals */}
         <section className="meals-section">
           <h2 className="section-title">Recommended Meals</h2>
           <div className="meals-grid">
@@ -107,7 +106,6 @@ export default function Meals() {
           </div>
         </section>
 
-        {/* Modal for Card Click (Shows Ingredients & Video Tutorial) */}
         {selectedMeal && (
           <div className="modal-overlay" onClick={() => setSelectedMeal(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -147,11 +145,9 @@ export default function Meals() {
           </div>
         )}
 
-        {/* SECTION 2: Calorie Tracker */}
         <section className="tracker-section">
           <h2 className="section-title">Calorie Tracker</h2>
 
-          {/* Form */}
           <form className="tracker-form" onSubmit={handleAddMeal}>
             <div className="input-group">
               <label htmlFor="foodName">Food Name</label>
@@ -181,13 +177,13 @@ export default function Meals() {
             </button>
           </form>
 
-          {/* Table */}
           <div className="tracker-table-container">
             <table className="tracker-table">
               <thead>
                 <tr>
                   <th>Food Name</th>
                   <th>Calories</th>
+                  <th style={{ textAlign: "right" }}>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -196,11 +192,19 @@ export default function Meals() {
                     <tr key={item.id}>
                       <td>{item.name}</td>
                       <td>{item.calories} kcal</td>
+                      <td style={{ textAlign: "right" }}>
+                        <button
+                          className="delete-btn"
+                          onClick={() => handleDeleteMeal(item.id)}
+                        >
+                          Remove
+                        </button>
+                      </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="2" style={{ textAlign: "center" }}>
+                    <td colSpan="3" style={{ textAlign: "center" }}>
                       No meals logged yet today.
                     </td>
                   </tr>
@@ -209,7 +213,7 @@ export default function Meals() {
               <tfoot>
                 <tr>
                   <td><strong>Total Calories</strong></td>
-                  <td><strong>{totalCalories} kcal</strong></td>
+                  <td colSpan="2"><strong>{totalCalories} kcal</strong></td>
                 </tr>
               </tfoot>
             </table>
