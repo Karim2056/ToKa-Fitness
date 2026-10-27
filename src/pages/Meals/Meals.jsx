@@ -16,7 +16,7 @@ const RECOMMENDED_MEALS = [
       "Cucumbers",
       "Olive oil & Lemon dressing"
     ],
-    videoUrl: "https://www.youtube.com/embed/1TcnC2S8YmU"
+    videoUrl: "https://www.youtube.com/embed/v1VUg6r4yFA?si=My73UeBLITx2718y"
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const RECOMMENDED_MEALS = [
       "Edamame beans",
       "Soy sesame dressing"
     ],
-    videoUrl: "https://www.youtube.com/embed/1TcnC2S8YmU"
+    videoUrl: "https://www.youtube.com/embed/v1VUg6r4yFA?si=My73UeBLITx2718y"
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const RECOMMENDED_MEALS = [
       "Chia seeds",
       "Honey"
     ],
-    videoUrl: "https://www.youtube.com/embed/1TcnC2S8YmU"
+    videoUrl: "https://www.youtube.com/embed/v1VUg6r4yFA?si=My73UeBLITx2718y"
   }
 ];
 

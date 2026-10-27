@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router";
-import About from "./pages/About/About"
+import About from "./pages/About/About";
 import SignUp from "./pages/SignUp/SignUp"
 import Login from "./pages/Login/Login";
-import Home from "./pages/Home/Home"
-import Meals from "./pages/Meals/Meals"
-import Workouts from "./pages/Workouts/Workouts"
+import Home from "./pages/Home/Home";
+import Meals from "./pages/Meals/Meals";
+import Workouts from "./pages/Workouts/Workouts";
+import Socials from "./pages/Socials/Socials";
 
 export default function Pages() {
     return (
@@ -15,7 +16,7 @@ export default function Pages() {
             <Route path="home" element={<Home/>}/>
             <Route path="meals" element={<Meals/>}/>
             <Route path="workouts" element={<Workouts/>}/>
-            <Route path="socials" element={<Home/>}/>
+            <Route path="socials" element={<Socials/>}/>
             <Route path="settings" element={<Home/>}/>
         </Routes>
     )
