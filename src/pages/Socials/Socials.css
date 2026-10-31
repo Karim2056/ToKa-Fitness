@@ -1,8 +1,9 @@
 .socials-body {
-    min-height: calc(100vh - 120px);
     background-color: #ffffff;
     color: black;
     padding: 24px;
+    padding-top: 170px;
+    padding-bottom: 200px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;

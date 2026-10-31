@@ -59,3 +59,22 @@
         max-width: 50px;
         filter: invert(55%) sepia(53%) saturate(3795%) hue-rotate(93deg) brightness(114%) contrast(99%);    }
 }
+
+.header2 {
+    background-color: black;
+    font-family: JetBrains;
+    padding: 20px;
+    padding-left: 20px;
+    border-bottom: 5px solid var(--green);
+    display: flex;
+    justify-content: space-between;
+
+    /* positioning header to follow screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 10;
+
+}

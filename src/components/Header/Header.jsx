@@ -7,7 +7,7 @@ import Menu from "../../assets/burger-menu-svgrepo-com (1).svg"
 
 export default function Header() {
 
-    
+
     // State to track login status reactively
     const [loggedin, setloggedin] = useState(localStorage.getItem("loggedin") === "true");
 
@@ -24,21 +24,21 @@ export default function Header() {
         return () => window.removeEventListener("authChange", checkAuth);
     }, []);
 
-    
+
     if (loggedin) {
-        return(
-            <div className="header">
-            <NavLink to="/home">
-                <button className="title">
-                    <h1 style={{ lineHeight: 1 }}>ToKa Fitness</h1>
-                </button>
-            </NavLink>
-            <NavLink to="/home">
-                <button className="profile-btn">
-                    profile
-                </button>
-            </NavLink>
-        </div>
+        return (
+            <div className="header2">
+                <NavLink to="/home">
+                    <button className="title">
+                        <h1 style={{ lineHeight: 1 }}>ToKa Fitness</h1>
+                    </button>
+                </NavLink>
+                <NavLink to="/home">
+                    <button className="profile-btn">
+                        profile
+                    </button>
+                </NavLink>
+            </div>
         )
     }
 

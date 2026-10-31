@@ -1,7 +1,9 @@
 .meals-body {
-    max-width: 1200px;
+  flex: 1;
+  padding-top: 140px;
+  padding-bottom: 200px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
   font-family: Arial, sans-serif;
 }
 

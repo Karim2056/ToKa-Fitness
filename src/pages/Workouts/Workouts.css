@@ -1,9 +1,9 @@
-/* Workouts.css */
-
 .workouts-body {
+    flex: 1;
+    padding-top: 140px;
+    padding-bottom: 200px;
     min-height: 80vh;
     background-color: #ffffff;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
     font-family: Arial, sans-serif;

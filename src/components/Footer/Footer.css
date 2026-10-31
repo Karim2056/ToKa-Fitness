@@ -33,3 +33,25 @@
         color: var(--green);
     }
 }
+
+.footer2 {
+    padding: 20px;
+    padding-left: 20px;
+    background-color: black;
+    border-top: 5px solid var(--green);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-contents {
+    display: flex;
+    gap: 20px;
+}
