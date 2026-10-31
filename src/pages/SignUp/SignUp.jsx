@@ -2,11 +2,13 @@ import "./SignUp.css"
 import { NavLink } from "react-router"
 import { useState } from "react";
 import axios from "axios"
+import { useNavigate } from "react-router";
 
 import BackArrow from "../../assets/back-svgrepo-com.svg"
 
 export default function SignUp() {
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -28,6 +30,7 @@ export default function SignUp() {
             .then(response => {
                 console.log("account created:", response.data);
                 alert("account created")
+                navigate("/login")
             })
             .catch(error => {       //goes through json files to find the error messages from backend
                 const detail = error.response?.data?.detail;

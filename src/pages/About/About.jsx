@@ -37,7 +37,7 @@ export default function About() {
                             • calorie tracker
                         </p>
                         <div className="btn-container">
-                            <NavLink className="tier-btn-link" to="/">
+                            <NavLink className="tier-btn-link" to="/signup">
                                 <button className="tier-btn">free</button>
                             </NavLink>
                         </div>
@@ -50,7 +50,7 @@ export default function About() {
                             • recommended meals
                         </p>
                         <div className="btn-container">
-                            <NavLink className="tier-btn-link" to="/">
+                            <NavLink className="tier-btn-link" to="/signup">
                                 <button className="tier-btn">£5 / month</button>
                             </NavLink>
                         </div>
@@ -64,7 +64,7 @@ export default function About() {
                             • social features
                         </p>
                         <div className="btn-container">
-                            <NavLink className="tier-btn-link" to="/">
+                            <NavLink className="tier-btn-link" to="/signup">
                                 <button className="tier-btn">£10 / month</button>
                             </NavLink>
                         </div>

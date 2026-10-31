@@ -47,6 +47,10 @@ form {
 
 }
 
+.login-btn:hover {
+    background-color: rgb(2, 194, 2);
+}
+
 .back-arrow-login {
     width: 40px;
     position: absolute;
