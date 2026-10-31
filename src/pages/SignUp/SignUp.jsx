@@ -31,8 +31,32 @@ export default function SignUp() {
                 console.log("account created:", response.data);
                 alert("success! account created");
             })
-            .catch(error => {
-                const errorMessage = error.response?.data?.detail || "an error occured";
+            .catch(error => {       
+                //goes through json files to find the error messages from backend
+                const detail = error.response?.data?.detail;
+                let errorMessage = "an error occured";
+
+                if (Array.isArray(detail) && detail.length > 0) {
+                    // if theres a validation error, take a field name that failed:
+                    const err = detail[0];
+                    const fieldName = err.loc[err.loc.length - 1];
+
+                    // all custom messages:
+                    const customMessages = {
+                        email: "Please enter a valid email address",
+                        username: "Username should be between 2 and 20 characters long",
+                        password: "Password should be at least 8 characters long"
+                    }
+
+                    // error message for any field error is used
+                    // a default error message exists if not found
+                    errorMessage = customMessages[fieldName] || `please check your ${fieldName}`;
+
+                } else if (typeof detail === "string") {
+                    // httpexception error messages from backend
+                    errorMessage = detail;
+                }
+
                 console.error("signup failed", errorMessage);
                 alert(errorMessage);
             });
