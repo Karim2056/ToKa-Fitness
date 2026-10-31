@@ -29,15 +29,15 @@ export default function SignUp() {
         axios.post("http://127.0.0.1:8001/auth/signup", signupData)
             .then(response => {
                 console.log("account created:", response.data);
-                alert("success! account created");
+                alert("account created")
             })
-            .catch(error => {       
-                //goes through json files to find the error messages from backend
+            .catch(error => {       //goes through json files to find the error messages from backend
                 const detail = error.response?.data?.detail;
                 let errorMessage = "an error occured";
 
                 if (Array.isArray(detail) && detail.length > 0) {
-                    // if theres a validation error, take a field name that failed:
+                    // if theres a validation error in detail array
+                    // take a field name that failed:
                     const err = detail[0];
                     const fieldName = err.loc[err.loc.length - 1];
 
