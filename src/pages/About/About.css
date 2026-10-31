@@ -110,6 +110,10 @@
     margin-top: auto;
 }
 
+.tier-btn:hover {
+    background-color: rgb(2, 194, 2);
+}
+
 .tier-btn-link {
     text-decoration: none;
 }

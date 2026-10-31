@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Meals from "./pages/Meals/Meals";
 import Workouts from "./pages/Workouts/Workouts";
 import Socials from "./pages/Socials/Socials";
+import Settings from "./pages/Settings/Settings";
 
 export default function Pages() {
     return (
@@ -17,7 +18,7 @@ export default function Pages() {
             <Route path="meals" element={<Meals/>}/>
             <Route path="workouts" element={<Workouts/>}/>
             <Route path="socials" element={<Socials/>}/>
-            <Route path="settings" element={<Home/>}/>
+            <Route path="settings" element={<Settings/>}/>
         </Routes>
     )
 }

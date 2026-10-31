@@ -18,7 +18,7 @@ export default function LoggedFooter() {
                 <NavLink to="/socials">
                     <button className="socials-btn">socials</button>
                 </NavLink>
-                <NavLink to="/home">
+                <NavLink to="/settings">
                     <button className="settings-btn">settings</button>
                 </NavLink>
             </div>

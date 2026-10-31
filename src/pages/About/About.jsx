@@ -36,7 +36,7 @@ export default function Home() {
                     <div className="tiers">
                         <h3>Tier 1</h3>
                         <p>
-                            • weekly workouts <br />
+                            • available workouts <br />
                             • calorie tracker
                         </p>
                         <div className="btn-container">
@@ -48,9 +48,9 @@ export default function Home() {
                     <div className="tiers">
                         <h3>Tier 2</h3>
                         <p>
-                            • weekly workouts <br />
+                            • available workouts <br />
                             • calorie tracker <br />
-                            • all available workouts
+                            • recommended meals
                         </p>
                         <div className="btn-container">
                             <NavLink className="tier-btn-link" to="/">
@@ -61,10 +61,9 @@ export default function Home() {
                     <div className="tiers">
                         <h3>Tier 3</h3>
                         <p>
-                            • weekly workouts <br />
+                            • available workouts <br />
                             • calorie tracker <br />
-                            • all available workouts <br />
-                            • meal recommendations <br />
+                            • recommended meals <br />
                             • social features
                         </p>
                         <div className="btn-container">
