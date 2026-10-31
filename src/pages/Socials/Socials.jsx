@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 import "./Socials.css"
-import LoggedHeader from "../../components/LoggedHeader/LogedHeader"
-import LoggedFooter from "../../components/LoggedFooter/LoggedFooter"
 
 // ----------------------------------------------------
 // Mock Data (Test User & Initial Sample Data)
@@ -166,7 +164,6 @@ export default function Socials() {
 
   return (
     <>
-      <LoggedHeader />
       <div className="socials-body">
         <div className="socials-container">
           {/* Header & Search */}
@@ -296,7 +293,6 @@ export default function Socials() {
           </div>
         </div>
       </div>
-      <LoggedFooter />
     </>
   )
 }

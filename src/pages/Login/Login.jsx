@@ -2,15 +2,12 @@ import "./Login.css"
 import { NavLink, useNavigate } from "react-router"
 import { useState } from "react"
 import BackArrow from "../../assets/back-svgrepo-com.svg"
-import Footer from "../../components/Footer/Footer"
-import Header from "../../components/Header/Header"
 import axios from "axios"
 
 
 export default function Login() {
 
     const navigate = useNavigate();
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -27,6 +24,8 @@ export default function Login() {
         axios.post("http://127.0.0.1:8001/auth/login", loginData)
             .then(response => {
                 console.log("logged in:", response.data);
+                localStorage.setItem("loggedin", "true");
+                window.dispatchEvent(new Event("authChange"))
                 navigate("/home")
             })
             .catch(error => {   // fastapi errors come back as strings
@@ -60,7 +59,6 @@ export default function Login() {
 
     return (
         <>
-            <Header />
             <div className="login-body">
                 <form onSubmit={handleSubmit}>
                     <h1 className="sign-up-title">
@@ -84,7 +82,6 @@ export default function Login() {
 
                 </form>
             </div>
-            <Footer />
         </>
     )
 }

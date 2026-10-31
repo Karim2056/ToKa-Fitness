@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Meals.css";
-import LoggedHeader from "../../components/LoggedHeader/LogedHeader";
-import LoggedFooter from "../../components/LoggedFooter/LoggedFooter";
 
 const RECOMMENDED_MEALS = [
   {
@@ -82,7 +80,6 @@ export default function Meals() {
 
   return (
     <>
-      <LoggedHeader />
 
       <div className="meals-body">
         <section className="meals-section">
@@ -221,7 +218,6 @@ export default function Meals() {
         </section>
       </div>
 
-      <LoggedFooter />
     </>
   );
 }

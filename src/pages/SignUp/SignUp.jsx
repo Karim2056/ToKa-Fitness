@@ -1,8 +1,6 @@
 import "./SignUp.css"
 import { NavLink } from "react-router"
 import { useState } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import axios from "axios"
 
 import BackArrow from "../../assets/back-svgrepo-com.svg"
@@ -64,7 +62,6 @@ export default function SignUp() {
 
     return (
         <>
-            <Header />
             <div className="sign-up-body">
                 <form onSubmit={handleSubmit}> 
                     <h1 className="sign-up-title">
@@ -123,7 +120,6 @@ export default function SignUp() {
                     <NavLink className="page-switch" to="/login">Already have an account? Login</NavLink>
                 </form>
             </div>
-            <Footer />
         </>
     )
 }

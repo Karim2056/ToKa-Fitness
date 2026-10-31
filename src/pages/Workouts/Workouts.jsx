@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import LoggedFooter from "../../components/LoggedFooter/LoggedFooter";
-import LoggedHeader from "../../components/LoggedHeader/LogedHeader";
 import "./Workouts.css";
 
 // Workout data library mapped by goal
@@ -77,7 +75,6 @@ export default function Workouts() {
 
   return (
     <>
-      <LoggedHeader />
       <div className="workouts-body">
         <div className="workouts-container">
           <header className="workouts-header">
@@ -171,7 +168,6 @@ export default function Workouts() {
           )}
         </div>
       </div>
-      <LoggedFooter />
     </>
   );
 }
