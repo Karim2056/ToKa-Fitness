@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Meals.css";
 
 const RECOMMENDED_MEALS = [
@@ -46,41 +47,103 @@ const RECOMMENDED_MEALS = [
   }
 ];
 
+const API_URL = "http://127.0.0.1:8001"; // Match your backend port
+
 export default function Meals() {
   const [selectedMeal, setSelectedMeal] = useState(null);
-
-  // Initialized to an empty array so no default logged meals show up without input
   const [loggedMeals, setLoggedMeals] = useState([]);
   const [foodName, setFoodName] = useState("");
   const [caloriesInput, setCaloriesInput] = useState("");
+  const [loading, setLoading] = useState(true);
 
+  // Pull logged-in username from Local Storage
+  const currentUsername = localStorage.getItem("username") || "guest";
+  const todayDate = new Date().toISOString().split("T")[0]; // "YYYY-MM-DD"
+
+  // 1. LOAD DATA: Fetch today's meals for this user on page mount
+  useEffect(() => {
+    axios.get(`${API_URL}/meal/${currentUsername}`)
+      .then(response => {
+        console.log("Loaded meals for today:", response.data);
+        if (response.data && response.data.meals) {
+          setLoggedMeals(response.data.meals);
+        }
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Failed to load meals:", error);
+        setLoading(false);
+      });
+  }, [currentUsername]);
+
+  // 2. HELPER TO SAVE/UPDATE DATA TO BACKEND VIA AXIOS
+  const saveMealsToBackend = (updatedMeals) => {
+    const payload = {
+      username: currentUsername,
+      date: todayDate,
+      meals: updatedMeals
+    };
+
+    axios.post(`${API_URL}/meal`, payload)
+      .then(response => {
+        console.log("Meals saved successfully to database:", response.data);
+      })
+      .catch(error => {
+        const detail = error.response?.data?.detail || "Failed to save meals";
+        console.error("Save failed:", detail);
+      });
+  };
+
+  // 3. ADD MEAL HANDLER WITH DATABASE SYNC (No validation on foodName)
   const handleAddMeal = (e) => {
     e.preventDefault();
     
-    // Strict validation: returns early if inputs are empty or only contain spaces
-    if (!foodName.trim() || !caloriesInput.toString().trim()) return;
+    // Only check if fields are present, accepting whatever text is entered without strict filtering
+    if (!foodName || !caloriesInput) return;
 
     const newMeal = {
       id: Date.now(),
-      name: foodName.trim(),
+      name: foodName, // Removed .trim() to eliminate any formatting validation checks
       calories: Number(caloriesInput)
     };
 
-    setLoggedMeals([...loggedMeals, newMeal]);
-    setFoodName("");
-    setCaloriesInput("");
+    const updatedMeals = [...loggedMeals, newMeal];
+
+    const payload = {
+      username: currentUsername,
+      date: todayDate,
+      meals: updatedMeals
+    };
+
+    axios.post(`${API_URL}/meal`, payload)
+      .then(response => {
+        console.log("Meal added and saved to database:", response.data);
+        setLoggedMeals(updatedMeals);
+        setFoodName("");
+        setCaloriesInput("");
+      })
+      .catch(error => {
+        const detail = error.response?.data?.detail || "Failed to save meal";
+        console.error("Save failed:", detail);
+        alert(detail);
+      });
   };
 
-  // Function to delete a specific logged meal item
+  // 4. DELETE MEAL HANDLER WITH DATABASE SYNC
   const handleDeleteMeal = (id) => {
-    setLoggedMeals(loggedMeals.filter((meal) => meal.id !== id));
+    const updatedMeals = loggedMeals.filter((meal) => meal.id !== id);
+    setLoggedMeals(updatedMeals);
+    saveMealsToBackend(updatedMeals);
   };
 
   const totalCalories = loggedMeals.reduce((sum, item) => sum + item.calories, 0);
 
+  if (loading) {
+    return <div className="meals-body"><p style={{ color: "white", textAlign: "center", marginTop: "50px" }}>Loading your meal tracker...</p></div>;
+  }
+
   return (
     <>
-
       <div className="meals-body">
         <section className="meals-section">
           <h2 className="section-title">Recommended Meals</h2>
@@ -143,7 +206,7 @@ export default function Meals() {
         )}
 
         <section className="tracker-section">
-          <h2 className="section-title">Calorie Tracker</h2>
+          <h2 className="section-title">Calorie Tracker ({todayDate})</h2>
 
           <form className="tracker-form" onSubmit={handleAddMeal}>
             <div className="input-group">
@@ -217,7 +280,6 @@ export default function Meals() {
           </div>
         </section>
       </div>
-
     </>
   );
 }
