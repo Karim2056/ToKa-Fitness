@@ -38,7 +38,9 @@
     padding: 30px;
     -webkit-box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.2);
-    margin-top: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .config-section {
@@ -47,13 +49,16 @@
 
 .config-section h3 {
     font-size: 1.1rem;
-    margin-bottom: 12px;
+    margin-bottom: 50px;
     color: #444;
+    display: flex;
+    justify-content: center;
 }
 
 /* Days Button Selector */
 .days-selector {
     display: flex;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -81,6 +86,8 @@
 /* Goals Button Selector */
 .goals-selector {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
     flex-wrap: wrap;
 }
@@ -93,7 +100,8 @@
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s ease;
-    margin-bottom: 100px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .goal-btn:hover {
