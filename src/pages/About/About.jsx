@@ -94,14 +94,14 @@ export default function About() {
                     </>
                 )}
                 <div className="ad-container">
-                    <h1>More ToKa Services</h1>
+                    <h1>ToKa Services</h1>
                     <div className="services-container">
-                        <div className="ad-card">
+                        <div className="advert-card">
                             <h2>ToKa Motion</h2>
                             <img className="smartwatch" src={Smartwatch} />
                             <p>smartwatch fitness app</p>
                         </div>
-                        <div className="ad-card">
+                        <div className="advert-card">
                             <h2>ToKa Mind & Recovery</h2>
                             <img className="mindfulness" src={Mindfulness} />
                             <p>meditation app</p>

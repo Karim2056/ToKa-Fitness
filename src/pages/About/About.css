@@ -186,7 +186,7 @@
     gap: 100px;
 }
 
-.ad-card {
+.advert-card {
     border: 2px solid var(--green);
     border-radius: 40px;
     display: flex;
