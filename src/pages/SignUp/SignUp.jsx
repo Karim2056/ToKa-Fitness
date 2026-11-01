@@ -12,7 +12,7 @@ export default function SignUp() {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [tier, setTier] = useState("tier 1")
+    let [tier, setTier] = useState("tier 1")
 
     function handleSubmit(e) {
         e.preventDefault();     // prevents page refresh when submitted
@@ -29,8 +29,9 @@ export default function SignUp() {
         axios.post("http://127.0.0.1:8001/auth/signup", signupData)
             .then(response => {
                 console.log("account created:", response.data);
-                alert("account created")
-                navigate("/login")
+                alert("account created");
+                localStorage.setItem("usertier", tier);
+                navigate("/login");
             })
             .catch(error => {       //goes through json files to find the error messages from backend
                 const detail = error.response?.data?.detail;

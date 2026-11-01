@@ -2,9 +2,12 @@ import "./Footer.css"
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 
+
 export default function Footer() {
 
     const [loggedin, setloggedin] = useState(localStorage.getItem("loggedin") === "true");
+    // defaults to tier 1 if not chosen
+    let usertier = localStorage.getItem("usertier") || "tier 1";
 
     useEffect(() => {
         // Function to update state when auth changes
@@ -19,7 +22,48 @@ export default function Footer() {
         return () => window.removeEventListener("authChange", checkAuth);
     }, []);
 
-    if (loggedin) {
+    if (loggedin && usertier === "tier 1") {
+        return (
+        <div className="footer2">
+            <div className="footer-contents">
+                <NavLink to="/home">
+                    <button className="home-btn">home</button>
+                </NavLink>
+                <NavLink to="/workouts">
+                    <button className="workouts-btn">workouts</button>
+                </NavLink>
+                <NavLink to="/settings">
+                    <button className="settings-btn">settings</button>
+                </NavLink>
+            </div>
+        </div>
+        )
+    }
+
+    // if logged into tier 2
+    if (loggedin && usertier === "tier 2") {
+        return (
+        <div className="footer2">
+            <div className="footer-contents">
+                <NavLink to="/home">
+                    <button className="home-btn">home</button>
+                </NavLink>
+                <NavLink to="/meals">
+                    <button className="meals-btn">meals</button>
+                </NavLink>
+                <NavLink to="/workouts">
+                    <button className="workouts-btn">workouts</button>
+                </NavLink>
+                <NavLink to="/settings">
+                    <button className="settings-btn">settings</button>
+                </NavLink>
+            </div>
+        </div>
+        )
+    }
+
+    // if logged in (tier 3)
+    if (loggedin && usertier === "tier 3") {
         return (
             <div className="footer2">
                 <div className="footer-contents">
@@ -43,6 +87,7 @@ export default function Footer() {
         )
     }
 
+    // not logged in
     return (
         <div className="footer">
             <div className="contacts">
