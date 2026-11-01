@@ -1,4 +1,43 @@
 .settings-body {
     flex: 1;
     padding-top: 109px;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-page-btn {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.119);
+    background-color: rgba(255, 0, 0, 0);
+    height: 80px;
+    width: 100%;
+
+    >h2 {
+        display: flex;
+        padding-left: 50px;
+    }
+}
+
+.settings-page-btn:hover {
+    background-color: rgb(249, 248, 248);
+
+}
+
+.navlink-btn {
+    border: none;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    >a {
+        text-decoration: none;
+        color: black;
+    }
+
+    >a:hover {
+        color: rgb(3, 197, 3);
+    }
 }

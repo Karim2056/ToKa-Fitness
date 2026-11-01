@@ -164,4 +164,46 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .services-container {
+        flex-direction: column;
+    }
+}
+
+.ad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h1 {
+        padding: 100px;
+    }
+    padding-bottom: 50px;
+}
+
+.services-container {
+    display: flex;
+    gap: 100px;
+}
+
+.ad-card {
+    border: 2px solid var(--green);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smartwatch {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.mindfulness {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
 }
