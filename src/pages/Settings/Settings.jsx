@@ -70,8 +70,8 @@ export default function Settings() {
                 <Modal isopen={ismodal5open} onclose={() => setismodal5open(false)}>
                     <div className="contact-us">
                         <a href="https://accounts.google.com/v3/signin/identifier?continue=https://mail.google.com/mail/u/0/&emr=1&followup=https://mail.google.com/mail/u/0/&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-737250080:1790868727487198">email: tokafitness@gmail.com</a>
-                        <a href="/">Terms of Service</a>
-                        <a href="/">Privacy Policy</a>
+                        <NavLink to="/tos">Terms of Service</NavLink>
+                        <NavLink to="/privacypolicy">Privacy Policy</NavLink>
                     </div>
                 </Modal>
 

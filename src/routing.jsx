@@ -7,18 +7,23 @@ import Meals from "./pages/Meals/Meals";
 import Workouts from "./pages/Workouts/Workouts";
 import Socials from "./pages/Socials/Socials";
 import Settings from "./pages/Settings/Settings";
+import TOS from "./pages/TOS/TOS";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 export default function Pages() {
     return (
         <Routes>
-            <Route index element={<About/>}/>
-            <Route path="signup" element={<SignUp/>}/>
-            <Route path="login" element={<Login/>}/>
-            <Route path="home" element={<Home/>}/>
-            <Route path="meals" element={<Meals/>}/>
-            <Route path="workouts" element={<Workouts/>}/>
-            <Route path="socials" element={<Socials/>}/>
-            <Route path="settings" element={<Settings/>}/>
+            <Route index element={<About />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+            <Route path="home" element={<Home />} />
+            <Route path="meals" element={<Meals />} />
+            <Route path="workouts" element={<Workouts />} />
+            <Route path="socials" element={<Socials />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="tos" element={<TOS />} />
+            <Route path="privacypolicy" element={<PrivacyPolicy/>} />
+
         </Routes>
     )
 }
