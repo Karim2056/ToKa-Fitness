@@ -22,6 +22,7 @@ export default function Footer() {
         return () => window.removeEventListener("authChange", checkAuth);
     }, []);
 
+    // if logged into tier 1
     if (loggedin && usertier === "tier 1") {
         return (
         <div className="footer2">

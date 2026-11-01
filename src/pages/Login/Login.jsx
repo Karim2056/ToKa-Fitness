@@ -25,6 +25,7 @@ export default function Login() {
             .then(response => {
                 console.log("logged in:", response.data);
                 localStorage.setItem("loggedin", "true");
+                localStorage.setItem("usertier", response.data.tier);
                 window.dispatchEvent(new Event("authChange"))
                 navigate("/home")
             })
@@ -69,12 +70,12 @@ export default function Login() {
                     </h1>
                     <div className="input-container">
                         <input className="form-inputs" placeholder="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                         />
                         <input className="form-inputs" type="password" placeholder="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <button className="login-btn">Login</button>

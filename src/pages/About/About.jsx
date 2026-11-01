@@ -33,8 +33,8 @@ export default function About() {
                     <div className="tiers">
                         <h3>Tier 1</h3>
                         <p>
-                            • available workouts <br />
-                            • calorie tracker
+                            • fitness and health advice <br />
+                            • available workouts
                         </p>
                         <div className="btn-container">
                             <NavLink className="tier-btn-link" to="/signup">
@@ -45,6 +45,7 @@ export default function About() {
                     <div className="tiers">
                         <h3>Tier 2</h3>
                         <p>
+                            • fitness and health advice <br />
                             • available workouts <br />
                             • calorie tracker <br />
                             • recommended meals
@@ -58,6 +59,7 @@ export default function About() {
                     <div className="tiers">
                         <h3>Tier 3</h3>
                         <p>
+                            • fitness and health advice <br />
                             • available workouts <br />
                             • calorie tracker <br />
                             • recommended meals <br />
