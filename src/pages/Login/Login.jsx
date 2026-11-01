@@ -26,6 +26,7 @@ export default function Login() {
                 console.log("logged in:", response.data);
                 localStorage.setItem("loggedin", "true");
                 localStorage.setItem("usertier", response.data.tier);
+                localStorage.setItem("username", username);
                 window.dispatchEvent(new Event("authChange"))
                 navigate("/home")
             })
