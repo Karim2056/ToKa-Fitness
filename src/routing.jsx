@@ -30,11 +30,11 @@ export default function Pages() {
     return (
         <Routes>
             {/* Root path: Dynamically switches based on reactive login state */}
-            <Route 
-                path="/" 
-                element={isLoggedIn ? <Navigate to="/home" replace /> : <About />} 
+            <Route
+                path="/"
+                element={isLoggedIn ? <Navigate to="/home" replace /> : <About />}
             />
-
+            <Route path="about" element={<About />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<Login />} />
             <Route path="home" element={<Home />} />

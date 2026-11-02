@@ -110,7 +110,7 @@ export default function Settings() {
                 </Modal>
 
                 {/* about us */}
-                <NavLink to="/">
+                <NavLink to="/about">
                     <button className="settings-page-btn">
                         <h2>About Us</h2>
                     </button>
